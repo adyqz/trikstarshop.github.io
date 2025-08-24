@@ -1,0 +1,1 @@
+# trikstarshop.github.io
