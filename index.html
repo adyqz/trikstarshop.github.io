@@ -1,470 +1,114 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TRIKSTAR — Top Up PUBG Mobile | Cepat & Aman</title>
-  <meta name="description" content="Top up UC PUBG Mobile cepat, aman, harga bersaing. Pembayaran QRIS, Dana, OVO, GoPay, Transfer Bank. Order via WhatsApp." />
-  <meta property="og:title" content="TRIKSTAR — Top Up PUBG Mobile" />
-  <meta property="og:description" content="Top up UC PUBG Mobile cepat, aman, harga bersaing." />
-  <meta name="theme-color" content="#ff1a2b" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@600;800&display=swap" rel="stylesheet" />
-  <style>
-    :root{
-      --brand-red:#ff1a2b;
-      --brand-deep:#8b0010;
-      --bg:#0b0b0d;
-      --card:#121217;
-      --text:#e7e9ee;
-      --muted:#b5b8bf;
-      --accent:#ffffff;
-      --success:#19c37d;
-      --warning:#f5a524;
-      --error:#ef4444;
-      --gradient: linear-gradient(135deg, var(--brand-red) 0%, var(--brand-deep) 55%, #0b0305 100%);
-      --radius:16px;
-      --shadow: 0 20px 50px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.03) inset;
-      --border: 1px solid rgba(255,255,255,.08);
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;background: radial-gradient(1200px 600px at 80% -10%, rgba(255,26,43,.07), transparent 60%),
-      radial-gradient(800px 400px at 10% 10%, rgba(139,0,16,.18), transparent 60%), var(--bg);
-      color:var(--text); font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      line-height:1.6;
-    }
-    .wrap{max-width:1200px;margin:0 auto;padding:24px}
-    header{
-      position:sticky;top:0;z-index:50;
-      backdrop-filter:saturate(1.2) blur(10px);
-      background:linear-gradient(to bottom, rgba(0,0,0,.5), rgba(0,0,0,.2));
-      border-bottom:var(--border);
-    }
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0;}
-    .brand{display:flex;align-items:center;gap:12px;}
-    .logo{
-      width:40px;height:40px;border-radius:10px;
-      background:var(--gradient);
-      display:grid;place-items:center;
-      box-shadow:0 8px 20px rgba(255,26,43,.2);
-      border:1px solid rgba(255,255,255,.08);
-    }
-    .logo:before{
-      content:"";width:18px;height:18px;border:2px solid #fff;border-top:none;border-left:none;transform:rotate(45deg);
-    }
-    .brand-name{font-family:Orbitron, Inter, sans-serif;font-weight:800;letter-spacing:.5px}
-    .nav-actions{display:flex;gap:10px;align-items:center}
-    .btn, button{
-      appearance:none;border:none;border-radius:12px;padding:10px 14px;font-weight:600;color:#0b0b0d;cursor:pointer;
-      background:var(--text);transition:.2s;display:inline-flex;align-items:center;gap:8px;
-    }
-    .btn:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(0,0,0,.25)}
-    .btn.primary{color:#fff;background:var(--gradient);box-shadow:0 12px 30px rgba(255,26,43,.25)}
-    .btn.ghost{background:transparent;color:var(--text);border:var(--border)}
-    .tag{
-      padding:6px 10px;border-radius:999px;border:var(--border);color:var(--muted);font-size:12px;
-      background:rgba(255,255,255,.02)
-    }
-    .hero{
-      display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center;padding:36px 0 10px;
-    }
-    .h1{font-family:Orbitron, Inter, sans-serif;font-size:42px;line-height:1.15;margin:0 0 12px}
-    .lead{color:var(--muted);margin:0 0 18px}
-    .stats{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px}
-    .stat{background:rgba(255,255,255,.03);border:var(--border);padding:10px 12px;border-radius:12px}
-    .panel{
-      background:linear-gradient(to bottom, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border:var(--border);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);
-    }
-    .inputs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
-    input, select{
-      width:100%;padding:12px 14px;border-radius:12px;background:#0f0f12;border:1px solid rgba(255,255,255,.08);
-      color:var(--text);outline:none;transition:.2s
-    }
-    input:focus, select:focus{border-color:rgba(255,26,43,.45);box-shadow:0 0 0 4px rgba(255,26,43,.15)}
-    .section-title{margin:28px 0 14px;font-weight:700;letter-spacing:.3px}
-    .grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
-    @media (max-width:1100px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(3,1fr)}}
-    @media (max-width:700px){.grid{grid-template-columns:repeat(2,1fr)}}
-    .card{
-      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border:var(--border);border-radius:16px;padding:14px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px;
-      position:relative;overflow:hidden;isolation:isolate;
-    }
-    .card:after{
-      content:"";position:absolute;inset:-1px;z-index:-1;
-      background:conic-gradient(from 120deg at 50% 50%, rgba(255,26,43,.25), transparent 30%, rgba(139,0,16,.25), transparent 65%, rgba(255,255,255,.05));
-      filter:blur(24px);opacity:.35;
-    }
-    .uc{font-size:18px;font-weight:700}
-    .price{font-weight:700;background:linear-gradient(90deg, #fff, #d7d9df);-webkit-background-clip:text;background-clip:text;color:transparent}
-    .note{color:var(--muted);font-size:12px}
-    .badges{display:flex;gap:8px;flex-wrap:wrap}
-    .badge{font-size:11px;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,.05);border:var(--border);color:var(--muted)}
-    .divider{height:1px;background:linear-gradient(to right, transparent, rgba(255,255,255,.08), transparent);margin:22px 0}
-    .trust{display:flex;gap:12px;flex-wrap:wrap}
-    .trust .item{display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:12px;border:var(--border);background:rgba(255,255,255,.03)}
-    .footer{margin:30px 0 10px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-    /* Drawer (Checkout) */
-    .drawer{
-      position:fixed;inset:0;display:none;z-index:100;background:rgba(0,0,0,.55);
-      align-items:flex-end;justify-content:center;padding:12px;
-    }
-    .drawer.open{display:flex}
-    .sheet{
-      width:min(860px, 100%);background:#0e0e12;border:var(--border);border-radius:16px;box-shadow:var(--shadow);overflow:hidden;
-      display:grid;grid-template-columns:1.1fr .9fr;
-    }
-    @media (max-width:900px){.sheet{grid-template-columns:1fr}}
-    .sheet header{position:unset;background:unset;border-bottom:var(--border)}
-    .sheet .area{padding:18px}
-    .sheet h3{margin:8px 0 10px}
-    .summary{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));border-left:var(--border)}
-    .summary .row{display:flex;justify-content:space-between;margin:8px 0;color:var(--muted)}
-    .summary .row strong{color:var(--text)}
-    .pill{display:inline-flex;gap:8px;align-items:center;border-radius:999px;padding:6px 10px;background:rgba(255,255,255,.05);border:var(--border);color:var(--muted);font-size:12px}
-    .radio{display:flex;flex-wrap:wrap;gap:8px}
-    .radio label{display:flex;gap:8px;align-items:center;border:var(--border);padding:8px 12px;border-radius:12px;background:#0f0f12;cursor:pointer}
-    .radio input{accent-color:var(--brand-red)}
-    .whatsapp{background:linear-gradient(135deg, #25D366, #0ea85f);color:#fff}
-    .muted{color:var(--muted)}
-    /* Tiny helpers */
-    .s{font-size:12px}
-    .r{border-radius:12px}
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TRIKSTAR Official | Top Up UC PUBG</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="img/trikstar-logo.png">
 </head>
 <body>
   <header>
-    <div class="wrap nav">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <div>
-          <div class="brand-name">TRIKSTAR</div>
-          <div class="s muted">Top Up PUBG Mobile • Fast & Secure</div>
-        </div>
-      </div>
-      <div class="nav-actions">
-        <span class="tag">Jam kerja: 09.00–22.00 WIB</span>
-        <button class="btn ghost" id="btnHelp">Bantuan</button>
-        <button class="btn primary" id="btnOpenOrder">Cek Pesanan</button>
-      </div>
-    </div>
+    <img src="img/trikstar-logo.png" alt="Trikstar Official Logo" class="logo">
+    <h1>TRIKSTAR OFFICIAL</h1>
+    <p class="subtitle">Top Up UC PUBG Aman & Terpercaya</p>
   </header>
+  <nav>
+    <a href="#topup">Top Up</a>
+    <a href="#harga">Harga</a>
+    <a href="#testimoni">Testimoni</a>
+    <a href="#faq">FAQ</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
+  <main>
+    <section id="topup" class="card">
+      <h2>Form Top Up UC PUBG</h2>
+      <form id="form-topup">
+        <label for="pubg-id">ID PUBG:</label>
+        <input type="text" id="pubg-id" name="pubg-id" required placeholder="Masukkan ID PUBG Anda">
 
-  <main class="wrap">
-    <section class="hero">
-      <div>
-        <h1 class="h1">Top Up UC PUBG Mobile. Cepat, aman, profesional.</h1>
-        <p class="lead">Bayar via QRIS, Dana, OVO, GoPay, atau transfer bank. Order instan, konfirmasi realtime, dan bukti transaksi rapi.</p>
-        <div class="trust">
-          <div class="item"><span class="pill">• Proses 1–10 menit</span></div>
-          <div class="item"><span class="pill">• Harga kompetitif</span></div>
-          <div class="item"><span class="pill">• Support 7/7</span></div>
-        </div>
-        <div class="stats">
-          <span class="badge">Official payment: QRIS</span>
-          <span class="badge">Invoice otomatis</span>
-          <span class="badge">Garansi salah input: dibantu</span>
-        </div>
-      </div>
-      <div class="panel">
-        <div class="s muted">Mulai di sini</div>
-        <div class="inputs">
-          <div>
-            <label class="s muted">Player ID</label>
-            <input id="playerId" placeholder="Contoh: 5123456789" inputmode="numeric" />
-          </div>
-          <div>
-            <label class="s muted">Nickname (opsional)</label>
-            <input id="nickname" placeholder="Tulis nama in-game" />
-          </div>
-          <div>
-            <label class="s muted">Kontak WhatsApp</label>
-            <input id="buyerWa" placeholder="Contoh: 081234567890" inputmode="tel" />
-          </div>
-          <div>
-            <label class="s muted">Catatan (opsional)</label>
-            <input id="note" placeholder="Misal: kirim bukti ke WA ya" />
-          </div>
-        </div>
-        <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
-          <button class="btn primary" onclick="scrollToPackages()">Pilih paket UC</button>
-          <button class="btn ghost" id="btnPolicy">Kebijakan & FAQ</button>
-        </div>
-      </div>
+        <label for="jenis-uc">Jenis UC:</label>
+        <select id="jenis-uc" name="jenis-uc" required>
+          <option value="">-- Pilih Jenis UC --</option>
+          <option value="fast">UC Fast</option>
+          <option value="slow">UC Slow</option>
+          <option value="sultan">Paket Sultan</option>
+        </select>
+
+        <label for="paket-uc">Pilih Paket UC:</label>
+        <select id="paket-uc" name="paket-uc" required>
+          <option value="">-- Pilih Paket --</option>
+          <option value="60">60 UC - Rp 12.000</option>
+          <option value="325">325 UC - Rp 65.000</option>
+          <option value="660">660 UC - Rp 125.000</option>
+          <option value="1800">1800 UC - Rp 330.000</option>
+          <option value="3850">3850 UC - Rp 700.000</option>
+        </select>
+
+        <label for="pembayaran">Metode Pembayaran:</label>
+        <select id="pembayaran" name="pembayaran" required>
+          <option value="">-- Pilih Pembayaran --</option>
+          <option value="mandiri">Mandiri</option>
+          <option value="ovo">OVO</option>
+          <option value="shopeepay">ShopeePay</option>
+          <option value="dana">Dana</option>
+        </select>
+
+        <button type="submit">Proses Top Up</button>
+      </form>
     </section>
-
-    <h2 class="section-title">Paket UC</h2>
-    <section class="grid" id="packagesGrid"></section>
-
-    <div class="divider"></div>
-
-    <section class="panel">
-      <h3 style="margin:0 0 6px">Kenapa pilih kami?</h3>
-      <ul style="margin:8px 0 0 18px; padding:0">
-        <li><strong>Layanan cepat:</strong> mayoritas pesanan selesai dalam 1–10 menit tergantung antrian.</li>
-        <li><strong>Transparan & rapi:</strong> invoice otomatis dan ringkasan pesanan jelas, cocok untuk bukti pembayaran.</li>
-        <li><strong>Dukungan penuh:</strong> ada kendala? Kami bantu sampai selesai.</li>
+    <section id="harga" class="card">
+      <h2>Daftar Harga UC PUBG</h2>
+      <ul>
+        <li>60 UC &mdash; Rp 12.000</li>
+        <li>325 UC &mdash; Rp 65.000</li>
+        <li>660 UC &mdash; Rp 125.000</li>
+        <li>1800 UC &mdash; Rp 330.000</li>
+        <li>3850 UC &mdash; Rp 700.000</li>
       </ul>
+      <p><b>Pilihan Jenis UC:</b> UC Fast, UC Slow, Paket Sultan</p>
     </section>
-
-    <footer class="footer">
-      <div>© <span id="year"></span> TRIKSTAR. Semua hak dilindungi.</div>
-      <div class="s">Kontak: <a href="#" id="footerWa" style="color:#fff;text-decoration:none;border-bottom:1px dotted rgba(255,255,255,.3)">WhatsApp</a> • Instagram</div>
-    </footer>
+    <section id="testimoni" class="card">
+      <h2>Testimoni Pembeli</h2>
+      <div class="testimoni-list">
+        <blockquote>
+          <p>Top Up cepat, harga murah, CS responsif! ⭐⭐⭐⭐⭐</p>
+          <cite>@pubgplayer1</cite>
+        </blockquote>
+        <blockquote>
+          <p>Langsung masuk UC-nya, mantap Trikstar!</p>
+          <cite>@gamerlegend</cite>
+        </blockquote>
+      </div>
+    </section>
+    <section id="faq" class="card">
+      <h2>FAQ</h2>
+      <details>
+        <summary>Bagaimana cara top up UC PUBG?</summary>
+        <p>Masukkan ID PUBG, pilih jenis UC, paket UC dan metode pembayaran. Setelah pembayaran, UC akan diproses maksimal 5 menit.</p>
+      </details>
+      <details>
+        <summary>Bagaimana jika UC tidak masuk?</summary>
+        <p>Hubungi CS melalui WhatsApp, kami siap membantu sampai UC Anda masuk.</p>
+      </details>
+      <details>
+        <summary>Metode pembayaran apa saja?</summary>
+        <p>Mandiri, OVO, ShopeePay, dan Dana.</p>
+      </details>
+      <details>
+        <summary>Apa itu Paket Sultan?</summary>
+        <p>Paket Sultan adalah paket UC dalam jumlah besar untuk kebutuhan spesial.</p>
+      </details>
+    </section>
+    <section id="kontak" class="card">
+      <h2>Kontak & Bantuan</h2>
+      <p>WhatsApp: <a href="https://wa.me/6285180771860">Hubungi CS</a></p>
+      <p>Instagram: <a href="https://instagram.com/trikstarofficial">@trikstarofficial</a></p>
+    </section>
   </main>
-
-  <!-- Drawer Checkout -->
-  <div class="drawer" id="drawer">
-    <div class="sheet">
-      <div class="area">
-        <h3>Checkout</h3>
-        <div id="selectedPkg" class="muted s" style="margin-bottom:8px"></div>
-
-        <div class="inputs" style="grid-template-columns:1fr 1fr">
-          <div>
-            <label class="s muted">Metode Pembayaran</label>
-            <div class="radio" id="payMethods">
-              <!-- generated -->
-            </div>
-          </div>
-          <div>
-            <label class="s muted">Email (opsional)</label>
-            <input id="buyerEmail" placeholder="Untuk kirim invoice PDF" />
-          </div>
-        </div>
-
-        <div style="margin-top:14px" class="muted s">
-          Dengan melanjutkan, Anda menyetujui ketentuan layanan & kebijakan refund kami.
-        </div>
-
-        <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap">
-          <button class="btn" onclick="closeDrawer()">Batal</button>
-          <button class="btn whatsapp" id="btnWaOrder">Buat order via WhatsApp</button>
-        </div>
-      </div>
-      <div class="summary area">
-        <h3>Ringkasan</h3>
-        <div class="row"><span>Paket</span><strong id="sumPkg">-</strong></div>
-        <div class="row"><span>Harga</span><strong id="sumPrice">-</strong></div>
-        <div class="row"><span>Biaya layanan</span><strong id="sumFee">Rp0</strong></div>
-        <div class="row"><span>Total</span><strong id="sumTotal">-</strong></div>
-        <div class="divider"></div>
-        <div style="display:grid;gap:6px" class="s">
-          <div class="row"><span>Player ID</span><strong id="sumId">-</strong></div>
-          <div class="row"><span>Nickname</span><strong id="sumNick">-</strong></div>
-          <div class="row"><span>Kontak</span><strong id="sumWa">-</strong></div>
-          <div class="row"><span>Metode</span><strong id="sumPay">-</strong></div>
-          <div class="row"><span>Catatan</span><strong id="sumNote">-</strong></div>
-          <div class="row"><span>Kode pesanan</span><strong id="sumCode">-</strong></div>
-        </div>
-        <div class="divider"></div>
-        <div class="muted s">
-          Setelah klik “Buat order via WhatsApp”, Anda akan diarahkan ke chat admin dengan detail pesanan lengkap.
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // ========== CONFIG ==========
-    const CONFIG = {
-      brand: "TRIKSTAR",
-      adminWa: "6281234567890", // Ganti ke nomor WhatsApp admin (format 62...)
-      fee: 0, // biaya layanan (angka), contoh 1000
-      paymentMethods: [
-        { id:"qris", label:"QRIS (semua e-wallet)", note:"Paling cepat", recommended:true },
-        { id:"dana", label:"Dana", note:"Otomatis"},
-        { id:"ovo",  label:"OVO",  note:""},
-        { id:"gopay",label:"GoPay", note:""},
-        { id:"bca",  label:"Transfer BCA", note:"Manual verifikasi"},
-      ],
-      // Daftar paket & harga IDR
-      packages: [
-        { id:"uc60",   name:"60 UC",    uc:60,    price:14000,  bonus:"" },
-        { id:"uc325",  name:"325 UC",   uc:325,   price:70000,  bonus:"+ Bonus" },
-        { id:"uc660",  name:"660 UC",   uc:660,   price:135000, bonus:"+ Bonus" },
-        { id:"uc1800", name:"1800 UC",  uc:1800,  price:360000, bonus:"+ Bonus" },
-        { id:"uc3850", name:"3850 UC",  uc:3850,  price:720000, bonus:"+ Bonus" },
-        { id:"uc8100", name:"8100 UC",  uc:8100,  price:1420000, bonus:"+ Bonus" },
-      ]
-    };
-
-    // ========== HELPERS ==========
-    const fmtIDR = n => new Intl.NumberFormat('id-ID', { style:'currency', currency:'IDR', maximumFractionDigits:0 }).format(n);
-    const el = sel => document.querySelector(sel);
-    const els = sel => document.querySelectorAll(sel);
-
-    // ========== RENDER PACKAGES ==========
-    const grid = el('#packagesGrid');
-    CONFIG.packages.forEach(p=>{
-      const card = document.createElement('div');
-      card.className = 'card';
-      card.innerHTML = `
-        <div class="badges">
-          <span class="badge">Resmi</span>
-          ${p.bonus ? `<span class="badge">${p.bonus}</span>`:''}
-        </div>
-        <div class="uc">${p.name}</div>
-        <div class="price">${fmtIDR(p.price)}</div>
-        <div class="note">Cocok untuk push rank & beli skin.</div>
-        <div style="display:flex;gap:8px;align-items:center;margin-top:auto">
-          <button class="btn primary" data-id="${p.id}">Top Up</button>
-          <button class="btn ghost s" data-id="${p.id}" data-view="detail">Detail</button>
-        </div>
-      `;
-      grid.appendChild(card);
-    });
-
-    // ========== CHECKOUT DRAWER ==========
-    const drawer = el('#drawer');
-    let selected = null;
-
-    function openDrawer(){
-      drawer.classList.add('open');
-    }
-    function closeDrawer(){
-      drawer.classList.remove('open');
-    }
-
-    function scrollToPackages(){
-      window.scrollTo({ top: grid.offsetTop - 80, behavior: 'smooth' });
-    }
-
-    // Populate payment methods
-    function renderPayments(){
-      const wrap = el('#payMethods');
-      wrap.innerHTML = '';
-      CONFIG.paymentMethods.forEach((m, i)=>{
-        const id = `pay_${m.id}`;
-        const node = document.createElement('label');
-        node.innerHTML = `
-          <input type="radio" name="pay" id="${id}" value="${m.label}" ${i===0?'checked':''}/>
-          <span>${m.label}</span>
-          ${m.recommended?'<span class="badge">Direkomendasikan</span>':''}
-        `;
-        wrap.appendChild(node);
-      });
-    }
-    renderPayments();
-
-    function makeOrderCode(){
-      const t = new Date();
-      const n = Math.floor(Math.random()*999).toString().padStart(3,'0');
-      return `TS-${t.getFullYear().toString().slice(-2)}${(t.getMonth()+1).toString().padStart(2,'0')}${t.getDate().toString().padStart(2,'0')}-${n}`;
-    }
-
-    function updateSummary(){
-      if(!selected) return;
-      const id = el('#playerId').value.trim();
-      const nick = el('#nickname').value.trim() || '-';
-      const wa = el('#buyerWa').value.trim();
-      const note = el('#note').value.trim() || '-';
-      const pay = (document.querySelector('input[name="pay"]:checked')||{}).value || '-';
-      const code = makeOrderCode();
-
-      const fee = Number(CONFIG.fee||0);
-      const total = selected.price + fee;
-
-      el('#selectedPkg').textContent = `Anda memilih ${selected.name}. Pastikan Player ID benar.`;
-      el('#sumPkg').textContent = selected.name;
-      el('#sumPrice').textContent = fmtIDR(selected.price);
-      el('#sumFee').textContent = fmtIDR(fee);
-      el('#sumTotal').textContent = fmtIDR(total);
-      el('#sumId').textContent = id || '-';
-      el('#sumNick').textContent = nick;
-      el('#sumWa').textContent = wa || '-';
-      el('#sumPay').textContent = pay;
-      el('#sumNote').textContent = note;
-      el('#sumCode').textContent = code;
-
-      // Store on button for WA redirect
-      el('#btnWaOrder').dataset.payload = JSON.stringify({id, nick, wa, note, pay, code, total});
-    }
-
-    // Package button handlers
-    grid.addEventListener('click', (e)=>{
-      const btn = e.target.closest('button');
-      if(!btn) return;
-      const id = btn.dataset.id;
-      const pkg = CONFIG.packages.find(p=>p.id===id);
-      if(!pkg) return;
-
-      if(btn.dataset.view === 'detail'){
-        alert(`${pkg.name}\nHarga: ${fmtIDR(pkg.price)}\n• Proses cepat 1–10 menit\n• Bonus mengikuti event berjalan`);
-        return;
-      }
-
-      // Validate minimal fields before checkout
-      const pid = el('#playerId').value.trim();
-      const wa  = el('#buyerWa').value.trim();
-      if(!pid || !wa){
-        alert('Masukkan Player ID dan kontak WhatsApp terlebih dahulu.');
-        return;
-      }
-
-      selected = pkg;
-      el('#sumPkg').textContent = pkg.name;
-      el('#sumPrice').textContent = fmtIDR(pkg.price);
-      el('#sumFee').textContent = fmtIDR(Number(CONFIG.fee||0));
-      el('#sumTotal').textContent = fmtIDR((Number(CONFIG.fee||0))+pkg.price);
-      el('#selectedPkg').textContent = `Anda memilih ${pkg.name}. Pastikan Player ID benar.`;
-
-      openDrawer();
-      updateSummary();
-    });
-
-    // Update summary when inputs change
-    ['playerId','nickname','buyerWa','note'].forEach(id=>{
-      el('#'+id).addEventListener('input', updateSummary);
-    });
-    el('#payMethods').addEventListener('change', updateSummary);
-
-    // WhatsApp order
-    el('#btnWaOrder').addEventListener('click', ()=>{
-      if(!selected){ alert('Pilih paket dulu.'); return; }
-      const payload = JSON.parse(el('#btnWaOrder').dataset.payload || '{}');
-      const lines = [
-        `Halo Admin ${CONFIG.brand}, saya ingin top up PUBG Mobile:`,
-        `• Paket: ${selected.name} (${fmtIDR(selected.price)})`,
-        `• Player ID: ${payload.id || '-'}`,
-        `• Nickname: ${payload.nick || '-'}`,
-        `• Metode: ${payload.pay || '-'}`,
-        `• Catatan: ${payload.note || '-'}`,
-        `• Total: ${fmtIDR(payload.total||0)}`,
-        `• Kode Pesanan: ${payload.code || '-'}`,
-        ``,
-        `Mohon instruksi pembayaran dan konfirmasi. Terima kasih!`
-      ];
-      const phone = CONFIG.adminWa.replace(/\D/g,'');
-      const text = encodeURIComponent(lines.join('\n'));
-      const url = `https://wa.me/${phone}?text=${text}`;
-      window.open(url, '_blank');
-    });
-
-    // Header actions
-    el('#btnHelp').addEventListener('click', ()=>{
-      alert('Bantuan cepat:\n1) Isi Player ID & WhatsApp.\n2) Pilih paket UC.\n3) Pilih metode bayar.\n4) Klik “Buat order via WhatsApp”.\n\nAdmin akan pandu pembayaran & proses top up.');
-    });
-    el('#btnOpenOrder').addEventListener('click', ()=>{
-      if(!selected){
-        alert('Belum ada pesanan aktif. Silakan pilih paket terlebih dahulu.');
-        return;
-      }
-      openDrawer(); updateSummary();
-    });
-    el('#btnPolicy').addEventListener('click', ()=>{
-      alert('Kebijakan singkat:\n• Refund: jika stok/layanan tidak tersedia, full refund.\n• Salah input ID: kami bantu, namun tanggung jawab user.\n• Jam kerja: 09.00–22.00 WIB.\n• Waktu proses: 1–10 menit (biasanya), bisa lebih saat event/antrian.');
-    });
-
-    // Footer
-    el('#year').textContent = new Date().getFullYear();
-    el('#footerWa').addEventListener('click', (e)=>{ e.preventDefault(); window.open(`https://wa.me/${CONFIG.adminWa.replace(/\D/g,'')}`,'_blank'); });
-
-    // Pre-fill checkout summary on load
-    updateSummary();
-  </script>
+  <footer>
+    <p>&copy; 2025 TRIKSTAR OFFICIAL | All rights reserved.</p>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
